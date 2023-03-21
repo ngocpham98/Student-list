@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid ms-3">
+        <a class="navbar-brand" href="#"><h3>List Students</h3></a>
+    </div>
+</nav>
+<div class="container mt-5">
+    <div class="form-control">
+        <form th:action="@{${action}}" method="post" th:object="${student}">
+            <div class="mb-3">
+                <label for="first-name" class="col-form-label">First Name:</label>
+                <input type="text" th:field="*{firstName}" class="form-control" id="first-name">
+            </div>
+            <div class="mb-3">
+                <label for="last-name" class="col-form-label">Last Name:</label>
+                <input type="text" th:field="*{lastName}" class="form-control" id="last-name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="col-form-label">Email:</label>
+                <input type="text" th:field="*{email}" class="form-control" id="email">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" th:text="${click}"></button>
+                <button type="button" class="btn btn-secondary ms-2" data-bs-dismiss="modal">Close</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
